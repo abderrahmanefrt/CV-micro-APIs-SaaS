@@ -1,0 +1,43 @@
+Cahier des charges — MVP "CV micro-APIs SaaS"
+Objectif
+
+Une plateforme qui expose 3 services de computer vision via API (OCR, suppression de fond, détection d'objets), avec authentification par clé API, système de crédits, et un dashboard simple pour gérer son compte.
+
+Fonctionnalités (par ordre de priorité)
+
+Phase 1 — Backend core (le plus important)
+
+ API FastAPI avec un endpoint /api/ocr fonctionnel (upload image → texte extrait)
+ Structure propre : routes, services, modèles séparés (pas tout dans un seul fichier)
+ Gestion des erreurs (mauvais format d'image, image trop grande, etc.)
+
+Phase 2 — Les 3 services CV
+
+ /api/ocr — extraction de texte (Tesseract ou EasyOCR)
+ /api/remove-bg — suppression de fond (librairie rembg)
+ /api/detect — détection d'objets (YOLOv8 pré-entraîné)
+
+Phase 3 — Authentification & crédits
+
+ Table users en PostgreSQL (email, mot de passe hashé, clé API, crédits restants)
+ Génération de clé API unique par utilisateur
+ Middleware qui vérifie la clé API sur chaque requête
+ Décrément des crédits à chaque appel réussi
+
+Phase 4 — Dashboard React
+
+ Page inscription/connexion
+ Affichage de la clé API + crédits restants
+ Formulaire de test : upload une image, choisir un service, voir le résultat direct dans le navigateur
+ Documentation basique de chaque endpoint
+
+Phase 5 — Finitions (plus tard)
+
+ Paiement (Stripe ou solution locale) pour acheter des crédits
+ Déploiement (Docker + hébergement)
+ Rate limiting, logs d'utilisation
+Stack technique
+Backend : Python, FastAPI, PostgreSQL, SQLAlchemy
+CV : Tesseract/EasyOCR, rembg, ultralytics (YOLOv8)
+Frontend : React + TypeScript (tu vas pratiquer directement ce qu'on vient d'apprendre !)
+Auth : JWT ou simple clé API en header
