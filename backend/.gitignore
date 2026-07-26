@@ -1,0 +1,97 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# ==========================
+# FastAPI uploads
+# ==========================
+uploads/
+outputs/
+temp/
+tmp/
+
+# SQLite (si jamais tu l'utilises)
+*.db
+*.sqlite3
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Node / React
+# ==========================
+node_modules/
+
+# Build React
+dist/
+build/
+
+# Vite
+.vite/
+
+# npm
+npm-debug.log*
+
+# pnpm
+.pnpm-store/
+
+# yarn
+.yarn/
+.yarn/cache/
+
+# ==========================
+# Docker
+# ==========================
+*.pid
+
+# ==========================
+# IDE
+# ==========================
+.history/
