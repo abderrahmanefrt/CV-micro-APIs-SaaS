@@ -1,9 +1,6 @@
 from fastapi import FastAPI
-from routers import ocr
+from routers import ocr, bg
 
 app = FastAPI()
 app.include_router(ocr.router)
-
-@app.get("/")
-def root():
-    return {"message": "API is running"}
+app.include_router(bg.router)
