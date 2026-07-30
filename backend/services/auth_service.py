@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
-from models import User
+from models.users import User
 from utils.apigen import generer_api_key
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
