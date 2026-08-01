@@ -9,7 +9,7 @@ interface RegisterResponse {
 function Register() {
   const [email, setEmail]= useState("");
   const [password, setPassword]= useState("");
-  const [apikey, setApikey]= useState("");
+  const [apikey, setApikey]= useState<string | null>(null);
 
   const handleSubmit = async ()=> {
     try{
