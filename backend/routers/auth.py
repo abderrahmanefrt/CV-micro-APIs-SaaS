@@ -19,6 +19,6 @@ def get_db():
 
 @router.post("/api/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):
-    nouvel_utilisateur = creer_utilisateur(db, user.email, user.password)
+    nouvel_utilisateur = create_user(db, user.email, user.password)
     return {"email": nouvel_utilisateur.email, "api_key": nouvel_utilisateur.api_key}
 

@@ -2,7 +2,7 @@ from fastapi import APIRouter, UploadFile, File, Depends
 from sqlalchemy.orm import Session
 from services.ocr_service import extraire_texte
 from services.auth_service import verifier_api_key, get_db
-from models import User
+from models.users import User
 
 router = APIRouter()
 
